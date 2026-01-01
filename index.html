@@ -1,223 +1,241 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
+    <title>Happy New Year 2026 — Your Turning Year 🎆</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Just For You 💗</title>
+
+    <!-- Elegant heading + note font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
 
     <style>
-        :root{
-            --pink1:#ff4fa2;
-            --pink2:#ff85c8;
-            --bg:#fff0f8;
-            --card:#ffffff;
-            --text:#333;
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+          font-family: "Poppins", Arial, sans-serif;
+          background: linear-gradient(135deg, #0b0b22, #1b1b5a);
+          color: white;
+          min-height: 100vh;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding: 20px;
         }
 
-        /* RESET */
-        *{
-            margin:0;
-            padding:0;
-            box-sizing:border-box;
-            font-family:"Poppins",sans-serif;
+        .card {
+          background: rgba(255,255,255,0.08);
+          border: 1px solid rgba(255,255,255,0.25);
+          border-radius: 20px;
+          padding: 32px;
+          width: 100%;
+          max-width: 560px;
+          text-align: center;
+          box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+          backdrop-filter: blur(12px);
+          animation: fadeUp .7s ease;
         }
 
-        body{
-            background:linear-gradient(135deg,#ffe6f3,#fff0f8);
-            height:100vh;
-            display:flex;
-            justify-content:center;
-            align-items:center;
-            overflow:hidden;
+        @keyframes fadeUp {
+          from { transform: translateY(20px); opacity: 0; }
+          to { transform: translateY(0); opacity: 1; }
         }
 
-        /* FLOATING HEARTS */
-        .hearts{
-            position:fixed;
-            inset:0;
-            z-index:-1;
-            overflow:hidden;
+        h1 { font-size: 28px; margin-bottom: 6px; }
+
+        .year-tag {
+          font-size: 32px;
+          font-weight: 700;
+          color: gold;
+          letter-spacing: 1px;
+          margin-bottom: 6px;
         }
 
-        .heart{
-            position:absolute;
-            bottom:-20px;
-            font-size:18px;
-            opacity:0.6;
-            animation:floatUp linear infinite;
+        /* New badge line */
+        .author-badge {
+          display: inline-block;
+          margin-top: 6px;
+          margin-bottom: 16px;
+          padding: 6px 14px;
+          border-radius: 20px;
+          border: 1px solid rgba(255,255,255,0.35);
+          background: rgba(0,0,0,0.28);
+          font-size: 13.5px;
+          letter-spacing: .4px;
+          font-weight: 600;
+          color: #ffd86b;
         }
 
-        @keyframes floatUp{
-            from{
-                transform:translateY(0) scale(1);
-                opacity:0.6;
-            }
-            to{
-                transform:translateY(-120vh) scale(1.4);
-                opacity:0;
-            }
+        .subline {
+          font-size: 15px;
+          opacity: .9;
+          margin-bottom: 14px;
         }
 
-        /* MAIN CARD */
-        .card{
-            width:320px;
-            background:var(--card);
-            border-radius:18px;
-            padding:24px;
-            text-align:center;
-            box-shadow:0 20px 40px rgba(255,79,162,0.25);
-            animation:cardIn 0.6s ease;
+        /* Upgraded font + slightly bigger letters */
+        .long-note {
+          background: rgba(0,0,0,0.25);
+          border: 1px solid rgba(255,255,255,0.35);
+          padding: 18px;
+          border-radius: 14px;
+          line-height: 1.7;
+          font-size: 17px;
+          letter-spacing: .3px;
+          margin-bottom: 18px;
+          font-family: "Playfair Display", serif;
         }
 
-        @keyframes cardIn{
-            from{
-                transform:translateY(30px) scale(0.9);
-                opacity:0;
-            }
-            to{
-                transform:translateY(0) scale(1);
-                opacity:1;
-            }
+        .wish-box {
+          margin: 18px 0;
+          padding: 16px;
+          border-radius: 14px;
+          background: rgba(0,0,0,0.25);
+          border: 1px dashed rgba(255,255,255,0.45);
+          min-height: 90px;
+          font-size: 18.5px;
+          line-height: 1.55;
+          letter-spacing: .2px;
         }
 
-        .card h2{
-            color:var(--pink1);
-            margin-bottom:10px;
+        button {
+          margin-top: 12px;
+          padding: 12px 20px;
+          border-radius: 999px;
+          border: none;
+          font-size: 16px;
+          cursor: pointer;
+          font-weight: 600;
+          transition: .25s;
         }
 
-        .card p{
-            color:#666;
-            font-size:15px;
-            margin-bottom:20px;
+        .btn-generate { background: gold; color: #111; }
+
+        .btn-generate:hover {
+          transform: translateY(-1px) scale(1.02);
         }
 
-        /* BUTTON */
-        .openBtn{
-            background:linear-gradient(135deg,var(--pink1),var(--pink2));
-            border:none;
-            padding:12px 20px;
-            border-radius:12px;
-            color:white;
-            font-size:16px;
-            font-weight:600;
-            cursor:pointer;
-            transition:0.3s;
+        .footer {
+          margin-top: 14px;
+          font-size: 13px;
+          opacity: .95;
+          line-height: 1.55;
         }
 
-        .openBtn:hover{
-            transform:scale(1.05);
-            box-shadow:0 10px 25px rgba(255,79,162,0.4);
+        .coder {
+          font-weight: 700;
+          letter-spacing: .4px;
+          color: #ffd86b;
         }
 
-        /* LETTER MODAL */
-        .letterBox{
-            position:fixed;
-            inset:0;
-            background:rgba(0,0,0,0.6);
-            display:none;
-            justify-content:center;
-            align-items:center;
+        .arrow {
+          margin-left: 4px;
+          font-weight: 700;
         }
 
-        .letter{
-            background:white;
-            width:90%;
-            max-width:360px;
-            border-radius:18px;
-            padding:24px;
-            animation:letterOpen 0.4s ease;
-        }
-
-        @keyframes letterOpen{
-            from{
-                transform:scale(0.85) translateY(20px);
-                opacity:0;
-            }
-            to{
-                transform:scale(1) translateY(0);
-                opacity:1;
-            }
-        }
-
-        .letter h3{
-            color:var(--pink1);
-            margin-bottom:12px;
-        }
-
-        .letter p{
-            font-size:15px;
-            color:#444;
-            line-height:1.5;
-        }
-
-        .closeBtn{
-            margin-top:18px;
-            background:#eee;
-            border:none;
-            padding:10px;
-            width:100%;
-            border-radius:10px;
-            cursor:pointer;
+        canvas {
+          position: fixed;
+          top:0; left:0;
+          width:100%; height:100%;
+          pointer-events:none;
         }
     </style>
 </head>
 
 <body>
 
-<!-- FLOATING HEARTS -->
-<div class="hearts" id="hearts"></div>
+<canvas id="confetti"></canvas>
 
-<!-- MAIN CARD -->
 <div class="card">
-    <h2>AREEE BSDK UDIT MY DOST💗</h2>
-    <p>TORA KHATIR KUCH SPECIAL.<br> (NECCHE OPEN WALA BUTTON PE DABAU).</p>
-    <button class="openBtn" onclick="openLetter()">Open</button>
-</div>
+    <h1>Happy New Year</h1>
 
-<!-- LETTER -->
-<div class="letterBox" id="letterBox">
-    <div class="letter">
-        <h3>Bass thoda sa bakchodi ba padh le…</h3>
-        <p>
-            BHAI BAHUTA DIN BHAIL TORA SE BADHIYASE BATT KAILA DOSTT.<br>
-            AUU KABO BAZARE MIL KE UNLIMITED TIME BATT KAIL JAUU.<br><br>
-            TE KAHI GUUSAA TA NAIKHIS NU, ATNA DIN ME KABO YAD NA
-            KAILIS HAMRA KE  AUU MIL YARR BHAII BAHUT DIN BHAIL PADH
-            LEELE NU MAD*** ABB JALDI AJAIHE KAL MILE<br><br>
+    <div class="year-tag">2026 • Your Turning Year Begins ✨</div>
 
-            (Note: agar koi batt bura lagal hoi ta sorry bss aise hi
-            mile ke rahe ta likh le bani)
-            And i fuck you beh*** .......(i AM WAITING)💕<br><br>
-            CODED BY :- CHANDAN YADAV
-        </p>
-        <button class="closeBtn" onclick="closeLetter()">Close</button>
+    <!-- New highlighted line -->
+    <div class="author-badge">
+        New Year Wishes by Chandan Yadav
     </div>
+
+    <div class="subline">
+        Start this year with hope, courage and new beginnings.
+    </div>
+
+    <div class="long-note">
+        As 2026 begins, may this turning year fill your life with purpose,
+        clarity, and strength. May every challenge shape you, every effort
+        reward you, and every day bring you closer to your dreams.
+        May your heart stay kind, your mind stay focused, and your journey
+        be guided with happiness, growth, and peace. Wishing you a year of
+        progress, opportunities, and beautiful moments ahead. 🌟
+    </div>
+
+    <div class="wish-box" id="wishText">
+        Click the button below to receive a special New Year wish 🎉
+    </div>
+
+    <button class="btn-generate" onclick="generateWish()">
+        Generate New Wish
+    </button>
+
+    <div class="footer">
+        <div class="footer">
+            Made with ❤️ for New Year Celebrations<br>
+            <span class="coder">coded by</span>
+            <span class="arrow">➤</span>
+            <span class="coder">CHANDAN YADAV</span>
+        </div>
 </div>
 
 <script>
-    /* HEART ANIMATION */
-    const heartsBox=document.getElementById("hearts");
-    const emojis=["💗","💖","💕","💞"];
+    const wishes = [
+      "May 2026 be the year where your efforts finally turn into achievements, your hopes turn into reality, and your dreams turn into milestones. Keep believing in yourself — your turning year has begun ✨",
+      "Wishing you a year filled with inner peace, financial growth, opportunities that shape your future, and the courage to take bold steps toward your dreams 🌟",
+      "May every sunrise in 2026 bring you strength, every challenge make you wiser, and every success remind you how far you’ve come. Your journey is powerful — keep moving forward 🚀",
+      "This year, may you let go of past worries, heal from unseen struggles, and rise with confidence. The world needs your light — shine brighter than ever ✨",
+      "May your hard work bring results, your dedication open doors, and your patience lead you to success. Trust the process — your story is just getting stronger 🙌",
+      "Wishing you growth in your career, stability in life, love in relationships, and faith in yourself. 2026 is your turning chapter — write it bravely ❤️",
+      "May positivity surround you, good health stay with you, and success walk beside you this entire year. Believe in the magic of new beginnings 🌈",
+      "A new year, a new chance, a stronger you — may 2026 reward your efforts, bless your family, and bring happiness to your home 🏠",
+      "May this year guide you toward your goals slowly, steadily, and meaningfully. Small steps will lead you to great achievements — stay consistent 💪",
+      "Wishing you courage to dream bigger, discipline to work harder, and gratitude to enjoy every moment of this beautiful year 🌟"
+    ];
 
-    setInterval(()=>{
-        const h=document.createElement("div");
-        h.className="heart";
-        h.innerText=emojis[Math.floor(Math.random()*emojis.length)];
-        h.style.left=Math.random()*100+"vw";
-        h.style.fontSize=(16+Math.random()*14)+"px";
-        h.style.animationDuration=(6+Math.random()*4)+"s";
-        heartsBox.appendChild(h);
-        setTimeout(()=>h.remove(),10000);
-    },700);
-
-    /* LETTER CONTROL */
-    function openLetter(){
-        document.getElementById("letterBox").style.display="flex";
+    function generateWish() {
+      const wish = wishes[Math.floor(Math.random() * wishes.length)];
+      document.getElementById("wishText").innerText = wish;
+      shootConfetti();
     }
 
-    function closeLetter(){
-        document.getElementById("letterBox").style.display="none";
+    // Confetti animation
+    const canvas = document.getElementById("confetti");
+    const ctx = canvas.getContext("2d");
+    canvas.width = innerWidth;
+    canvas.height = innerHeight;
+
+    const confettiPieces = [];
+    for (let i = 0; i < 80; i++) {
+      confettiPieces.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * -canvas.height,
+        s: Math.random() * 6 + 2,
+        v: Math.random() * 2 + 1
+      });
     }
+
+    function drawConfetti() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        confettiPieces.forEach(p => {
+          ctx.fillStyle = ["#FFD700","#FF69B4","#7CFC00","#00FFFF","#FF4500"][Math.floor(Math.random()*5)];
+          ctx.fillRect(p.x, p.y, p.s, p.s);
+          p.y += p.v;
+          if (p.y > canvas.height) p.y = -10;
+        });
+        requestAnimationFrame(drawConfetti);
+    }
+
+    function shootConfetti() {
+      confettiPieces.forEach(p => p.y = Math.random() * -200);
+    }
+
+    drawConfetti();
 </script>
 
 </body>
